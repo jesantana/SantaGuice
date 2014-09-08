@@ -5,14 +5,8 @@ This project is inspired on RoboGuice. It is intended to let the user define new
 
 Example
 
-    package santaguice;
-    
-    import santaguice.annotations.InjectContainerAsOnClickListener;
-    import santaguice.annotations.InjectTypeface;
-    import android.app.Activity;
-    
     public class ExampleActivity extends Activity {
-    
+
     	@InjectView(R.id.btnComenzar)
     	@InjectContainerAsOnClickListener
     	private Button btnComenzar;
@@ -21,6 +15,14 @@ Example
     	@InjectTypeface(typefaceName="myCustomFont")
     	private Button btnPuntuaciones;
     	
-    	...
     	
+    	@Override
+    	protected void onCreate(Bundle savedInstanceState) {
+    		super.onCreate(savedInstanceState);
+    		
+    		setContentView(R.layout.select_activity);
+    		
+    		//Launch injector scan for annotated properties
+    		PropertyFiller.getInstance().injectAllFoundProperties(this);
+    	}
     }
