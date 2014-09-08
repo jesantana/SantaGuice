@@ -6,7 +6,6 @@ import java.util.HashMap;
 
 import santaguice.annotations.InjectContainerAsOnClickListener;
 import santaguice.annotations.InjectTypeface;
-import test.application.Activity;
 import santaguice.injector.ContainerAsOnClickListenerInjector;
 import santaguice.injector.Injector;
 import santaguice.injector.TypefaceInjector;
